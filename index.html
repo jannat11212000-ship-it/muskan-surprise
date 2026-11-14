@@ -1,73 +1,114 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Muskan 💗</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffe4ed, #fff0f5, #ffd6e7);
+    background: linear-gradient(135deg,#ffe4ed,#fff0f5,#ffd6e7);
     font-family: 'Segoe UI', sans-serif;
-    text-align: center;
     color: #87445e;
+    text-align: center;
     overflow-x: hidden;
 }
 
+#welcome {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg,#ffd6e7,#fff0f5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+}
+
+#welcome h1 { color: #e66b9c; font-size: 38px; }
+
 .card {
-    background: rgba(255,255,255,0.9);
-    max-width: 550px;
-    margin: 90px auto;
-    padding: 45px 25px;
+    background: rgba(255,255,255,.9);
+    max-width: 750px;
+    margin: 45px auto;
+    padding: 35px 22px;
     border-radius: 30px;
     box-shadow: 0 10px 35px #e9b7cb;
     position: relative;
     z-index: 2;
 }
 
-h1 {
-    color: #e66b9c;
-    font-size: 38px;
-}
-
-h2 {
-    color: #d96b94;
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.8;
-}
+h1 { color: #e66b9c; }
+h2 { color: #d96b94; }
 
 button {
     background: #ec83aa;
     color: white;
     border: none;
-    padding: 14px 27px;
+    padding: 13px 25px;
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
     margin: 12px;
-    transition: 0.3s;
 }
 
-button:hover {
-    background: #d85e8e;
-    transform: scale(1.06);
+button:hover { background: #d85e8e; }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.gallery img {
+    width: 190px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px #e9b7cb;
+    cursor: pointer;
 }
 
 #letter {
     display: none;
     background: #fff0f5;
-    padding: 20px;
+    padding: 22px;
     border-radius: 20px;
     margin-top: 20px;
-    animation: appear 1s;
+}
+
+.message {
+    background: white;
+    border-radius: 15px;
+    padding: 14px;
+    margin: 12px 0;
+    color: #bd5d87;
+    font-size: 17px;
+}
+
+#photoView {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#photoView img {
+    max-width: 95%;
+    max-height: 85vh;
+    border-radius: 18px;
 }
 
 .heart {
@@ -80,113 +121,83 @@ button:hover {
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(0) rotate(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
 }
 
-@keyframes appear {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.footer {
-    margin-top: 30px;
-    font-size: 14px;
-    color: #bd7894;
-}
-
+.footer { margin-top: 30px; color: #bd7894; }
 </style>
 </head>
 
 <body>
 
+<div id="welcome">
+    <h1>Hey Muskan! 🎀</h1>
+    <p>Someone made a little surprise just for you...</p>
+    <h2>Are you ready, bbu? 💗</h2>
+    <button onclick="startSurprise()">Open my surprise 💌</button>
+</div>
+
 <div class="card">
+    <h1>For My Muskan 🌷</h1>
+    <p>A little corner of happiness made just for you!</p>
 
-    <h1>Hey Muskan! 🌷</h1>
-
-    <p>
-        I made something special just for you.
-    </p>
-
-    <p>
-        First of all, I hope you know
-        how precious you are! 💗
-    </p>
+    <h2>Our Little Memories 📸</h2>
+    <div class="gallery">
+        <img src="muskan1.png" alt="Muskan photo 1" onclick="showPhoto(this.src)">
+        <img src="muskan2.png" alt="Muskan photo 2" onclick="showPhoto(this.src)">
+        <img src="muskan3.png" alt="Muskan photo 3" onclick="showPhoto(this.src)">
+    </div>
 
     <h2>A Little Reminder ✨</h2>
+    <p>You deserve happiness, peace and all the beautiful things in life.</p>
 
-    <p>
-        You deserve happiness.
-        You deserve peace.
-        And you deserve all the beautiful
-        things life has to offer.
-    </p>
-
-    <button onclick="openLetter()">
-        Open your little letter 💌
-    </button>
+    <h2>A Secret For You 💌</h2>
+    <p>There's a little letter waiting for you...</p>
+    <button onclick="openLetter()">Open your secret letter 💗</button>
 
     <div id="letter">
-
-        <h2>Dear Muskan 💗</h2>
-
-        <p>
-            Hey Muskan!
-            <br><br>
-            Just wanted to remind you that
-            you are an amazing person.
-            <br><br>
-            Don't let a bad day make you
-            forget how wonderful you are.
-            <br><br>
-            Keep smiling, keep shining.
-            Better days are waiting for you! 🌸
-            <br><br>
-            Sending you lots of happiness!
-            💗
-        </p>
-
-        <h2>Stay Happy! 🌷</h2>
-
+        <h2>Dear Muskan, my bbu! 🎀</h2>
+        <div class="message">I love you amar bbu 💗</div>
+        <div class="message">Don't forget to smile, bbu!</div>
+        <div class="message">You deserve all the happiness 🌷</div>
+        <div class="message">Imma always be there for you 💕</div>
+        <div class="message">Dont stop loving ur ickra bbu!! 🎀</div>
+        <h2>Stay happy always! 💗</h2>
     </div>
 
-    <div class="footer">
-        Made with love, just for Muskan ♡
-    </div>
+    <div class="footer">Made with love, just for Muskan ♡</div>
+</div>
 
+<div id="photoView" onclick="this.style.display='none'">
+    <img id="bigPhoto" src="" alt="Full photo">
 </div>
 
 <script>
+function startSurprise() {
+    document.getElementById("welcome").style.display = "none";
+}
 
 function openLetter() {
     document.getElementById("letter").style.display = "block";
 }
 
+function showPhoto(src) {
+    document.getElementById("bigPhoto").src = src;
+    document.getElementById("photoView").style.display = "flex";
+}
+
 function createHeart() {
     const heart = document.createElement("div");
-
     heart.className = "heart";
     heart.innerHTML = "♥";
-
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (15 + Math.random() * 20) + "px";
     heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-
     document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 8000);
+    setTimeout(() => heart.remove(), 8000);
 }
 
 setInterval(createHeart, 500);
-
 </script>
 
 </body>
