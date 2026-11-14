@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Muskan 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe4ed, #fff0f5, #ffd6e7);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #87445e;
+    overflow-x: hidden;
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    max-width: 550px;
+    margin: 90px auto;
+    padding: 45px 25px;
+    border-radius: 30px;
+    box-shadow: 0 10px 35px #e9b7cb;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    color: #e66b9c;
+    font-size: 38px;
+}
+
+h2 {
+    color: #d96b94;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+button {
+    background: #ec83aa;
+    color: white;
+    border: none;
+    padding: 14px 27px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 12px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d85e8e;
+    transform: scale(1.06);
+}
+
+#letter {
+    display: none;
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    animation: appear 1s;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ed82aa;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bd7894;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Hey Muskan! 🌷</h1>
+
+    <p>
+        I made something special just for you.
+    </p>
+
+    <p>
+        First of all, I hope you know
+        how precious you are! 💗
+    </p>
+
+    <h2>A Little Reminder ✨</h2>
+
+    <p>
+        You deserve happiness.
+        You deserve peace.
+        And you deserve all the beautiful
+        things life has to offer.
+    </p>
+
+    <button onclick="openLetter()">
+        Open your little letter 💌
+    </button>
+
+    <div id="letter">
+
+        <h2>Dear Muskan 💗</h2>
+
+        <p>
+            Hey Muskan!
+            <br><br>
+            Just wanted to remind you that
+            you are an amazing person.
+            <br><br>
+            Don't let a bad day make you
+            forget how wonderful you are.
+            <br><br>
+            Keep smiling, keep shining.
+            Better days are waiting for you! 🌸
+            <br><br>
+            Sending you lots of happiness!
+            💗
+        </p>
+
+        <h2>Stay Happy! 🌷</h2>
+
+    </div>
+
+    <div class="footer">
+        Made with love, just for Muskan ♡
+    </div>
+
+</div>
+
+<script>
+
+function openLetter() {
+    document.getElementById("letter").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 500);
+
+</script>
+
+</body>
+</html>
